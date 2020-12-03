@@ -20,13 +20,19 @@ fun lotOfArgs(firstArg : Int, secondArg : Int, thirdArg : Int, lastArg : String)
     println("$lastArg : result is $result")
 }
 
-// Single expression function
-/**
+/** Single expression function ***
  * When a function returns a single expression, the curly braces
  * can be omitted and the body is specified after a = symbol
  * Explicitly declaring return type is optional
  */
-fun product(a : Int, b: Int) = a*b
+
+// A normal function
+fun product(a : Int, b : Int) : Int{
+    return a*b
+}
+
+// The above function can be replaced by a single expression function
+fun productSingleExpression(a : Int, b: Int) = a*b
 
 // Returning Null
 fun canReturnNull(it : Int) : Int? {
@@ -46,7 +52,7 @@ fun main(){
     // Named arguments
     lotOfArgs(lastArg = "User", secondArg = 3, firstArg = 5, thirdArg = 1)
 
-    println("Product of 3 and 5 is ${product(3,5)}")
+    println("Product of 3 and 5 is ${productSingleExpression(3,5)}")
 
     println("First call to canReturnNull = ${canReturnNull(1)}")
     println("Second call to canReturnNull = ${canReturnNull(2)}")
